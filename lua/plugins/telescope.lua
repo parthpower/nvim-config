@@ -2,9 +2,11 @@ return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"kdheepak/lazygit.nvim",
 	},
 	config = function()
 		require('telescope').setup()
+		require('telescope').load_extension("lazygit")
 
 		local builtin = require('telescope.builtin')
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -18,10 +20,11 @@ return {
 			builtin.grep_string({search = word})
 		end)
 		vim.keymap.set('n','<leader>ps', function()
-			local word = vim.fn.expand("<cWORD>")
 			builtin.grep_string({search = vim.fn.input("Grep > ") })
 		end)
 		vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+
+		vim.keymap.set('n','<leader>lg',"<cmd>LazyGit<cr>")
 	end
 
 }
