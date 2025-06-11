@@ -1,4 +1,4 @@
--- Bootstrap lazy.nvim
+-- Bootstrap la lz l ly.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -24,6 +24,7 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import your plugins
     { import = "plugins" },
   },
@@ -31,10 +32,10 @@ require("lazy").setup({
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
 })
 
-vim.opt.expandtab = true;
-vim.opt.tabstop = 2;
-vim.opt.shiftwidth = 2;
-vim.opt.softtabstop = 2;
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
