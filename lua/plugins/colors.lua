@@ -13,14 +13,6 @@ return {
     },
 
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        opts = {},
-        config = function()
-            ColorMyPencils()
-        end
-    },
-    {
         "ellisonleao/gruvbox.nvim",
         name = "gruvbox",
         config = function()
@@ -49,6 +41,27 @@ return {
                 transparent_mode = false,
             })
         end,
+    },
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      lazy = true,
+      config = function()
+        require("catppuccin").setup({
+        transparent_background = true,
+        float = {
+          transparent = false,
+          solid = false
+        }
+      })
+      end,
+      opts = function(_, opts)
+        local module = require("catppuccin.groups.integrations.bufferline")
+        if module then
+          module.get = module.get_theme
+        end
+        return opts
+      end,
     },
     {
         "folke/tokyonight.nvim",
