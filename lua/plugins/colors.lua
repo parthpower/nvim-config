@@ -48,20 +48,20 @@ return {
       lazy = true,
       config = function()
         require("catppuccin").setup({
-        transparent_background = true,
+        transparent_background = false,
         float = {
           transparent = false,
           solid = false
         }
       })
       end,
-      opts = function(_, opts)
-        local module = require("catppuccin.groups.integrations.bufferline")
-        if module then
-          module.get = module.get_theme
-        end
-        return opts
-      end,
+      -- opts = function(_, opts)
+      --   local module = require("catppuccin.groups.integrations.bufferline")
+      --   if module then
+      --     module.get = module.get_theme
+      --   end
+      --   return opts
+      -- end,
     },
     {
         "folke/tokyonight.nvim",
