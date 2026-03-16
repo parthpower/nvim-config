@@ -1,1 +1,1 @@
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
