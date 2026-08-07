@@ -48,7 +48,7 @@ return {
       lazy = true,
       config = function()
         require("catppuccin").setup({
-        transparent_background = true,
+        transparent_background = false,
         float = {
           transparent = false,
           solid = false
